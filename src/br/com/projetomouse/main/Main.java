@@ -32,6 +32,6 @@ public class Main {
         System.out.println("\nCaracterísticas do Mouse: " +
                 "\nCor: " + mouse1.getCor() +
                 "\nDPI: " + mouse1.getDPI() +
-                "\nPeso em Gramas: " + mouse1.getDPI());
+                "\nPeso em Gramas: " + mouse1.getPesoEmGramas());
     }
 }
