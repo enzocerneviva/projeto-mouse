@@ -33,12 +33,7 @@ No arquivo `Main.java`, o fluxo de execução segue este exemplo:
 
 ```java
 // Instanciação
-Mouse meuMouse = new Mouse();
-
-// Configuração de atributos
-meuMouse.setDPI(800);
-meuMouse.setCor("Preto");
-meuMouse.setPesoEmGramas(85.5);
+Mouse meuMouse = new Mouse("Vermelho", 800, 100);
 
 // Simulação de ações
 meuMouse.deslocarPonteiro(1920, 1080);
@@ -46,3 +41,4 @@ meuMouse.scrollar(-2); // Rola para baixo
 ```
 
 ### Criado por: Enzo Cerneviva | Rm: 563480
+
