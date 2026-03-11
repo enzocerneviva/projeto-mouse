@@ -1,14 +1,21 @@
 package br.com.projetomouse.model;
 
 public class Mouse {
-    public long DPI;
-    public String cor;
-    public double pesoEmGramas;
+    private long dpi;
+    private String cor;
+    private double pesoEmGramas;
+
     private double xAtual = 0;
     private double yAtual = 0;
     private int pixelsPorScroll = 100;
     private boolean corDefinida = false;
     private boolean pesoDefinido = false;
+
+    public Mouse (String cor, long dpi, double pesoEmGramas) {
+        this.setCor(cor);
+        this.setDpi(dpi);
+        this.setPesoEmGramas(pesoEmGramas);
+    }
 
     public void deslocarPonteiro (final double x, final double y) {
         System.out.println("\nDeslocando ponteiro...");
@@ -16,7 +23,7 @@ public class Mouse {
         System.out.println("\nCoordenada anterior: (" + this.xAtual + ", " + this.yAtual + ")");
 
         double distanciaDeslocada = Math.sqrt(Math.pow((y - this.yAtual), 2) + Math.pow((x - this.xAtual), 2));
-        double centimetrosDeslocados = (distanciaDeslocada / this.DPI) * 2.54; // 2.54 equivale a quantidade de centím. de uma polegada.
+        double centimetrosDeslocados = (distanciaDeslocada / this.dpi) * 2.54; // 2.54 equivale a quantidade de centím. de uma polegada.
         this.xAtual = x;
         this.yAtual = y;
 
@@ -45,7 +52,7 @@ public class Mouse {
 
     }
 
-    public void setCor(String cor) {
+    private void setCor(String cor) {
         if (corDefinida == false) {
             this.cor = cor;
             this.corDefinida = true;
@@ -55,16 +62,16 @@ public class Mouse {
 
     }
 
-    // Mantive o DPI alterável mais de uma vez porque tem mouses que possuem essa opção
-    public void setDPI(long DPI) {
-        if (DPI > 0) {
-            this.DPI = DPI;
+    // Mantive o dpi alterável mais de uma vez porque tem mouses que possuem essa opção
+    private void setDpi(long dpi) {
+        if (dpi > 0) {
+            this.dpi = dpi;
         } else {
             System.out.println("Esse valor não é válido para ser atribuido ao DPI");
         }
     }
 
-    public void setPesoEmGramas(double pesoEmGramas) {
+    private void setPesoEmGramas(double pesoEmGramas) {
         if (pesoDefinido == false) {
             if (pesoEmGramas >= 30) {
                 this.pesoEmGramas = pesoEmGramas;
@@ -81,8 +88,8 @@ public class Mouse {
         return cor;
     }
 
-    public long getDPI() {
-        return DPI;
+    public long getDpi() {
+        return dpi;
     }
 
     public double getPesoEmGramas() {

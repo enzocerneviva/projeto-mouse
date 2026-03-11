@@ -10,17 +10,7 @@ public class Main {
         System.out.println("------ Inicializando Projeto Mouse ------");
         System.out.println("-----------------------------------------");
 
-        Mouse mouse1 = new Mouse();
-
-        mouse1.setDPI(0);
-        mouse1.setPesoEmGramas(20);
-
-        mouse1.setDPI(800);
-        mouse1.setCor("Vermelho");
-        mouse1.setPesoEmGramas(100);
-
-        mouse1.setCor("verde");
-        mouse1.setPesoEmGramas(60);
+        Mouse mouse1 = new Mouse("Vermelho", 800, 100);
 
         mouse1.deslocarPonteiro(720, 480);
         mouse1.deslocarPonteiro(200, 400);
